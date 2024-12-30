@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematics</title>
+    <title>Math Practice Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Mathematics</h1>
-        <p>Solve the question below:</p>
+        <h1>Math Practice Game</h1>
+        <p id="level"></p>
         <div id="question"></div>
-        <input type="number" id="answer" placeholder="Answer here">
+        <input type="number" id="answer" placeholder="Your Answer">
         <button onclick="checkAnswer()">Submit</button>
-        <button onclick="nextQuestion()">Next Question</button>
         <p id="feedback"></p>
     </div>
     <script src="script.js"></script>
