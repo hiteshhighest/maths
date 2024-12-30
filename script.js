@@ -1,4 +1,3 @@
-// Questions grouped by levels of difficulty
 const questions = {
     level1: [
         { question: "(-1) + 2", answer: 1 },
@@ -29,19 +28,17 @@ const questions = {
     ]
 };
 
-let currentLevel = 'level1'; // Start with Level 1
+let currentLevel = 'level1';
 let currentQuestionIndex = 0;
 
-// Display the current question
 function showQuestion() {
     const questionElement = document.getElementById('question');
     const levelQuestions = questions[currentLevel];
     questionElement.textContent = levelQuestions[currentQuestionIndex].question;
-    document.getElementById('answer').value = ''; // Clear the input field
-    document.getElementById('feedback').textContent = ''; // Clear feedback
+    document.getElementById('answer').value = '';
+    document.getElementById('feedback').textContent = '';
 }
 
-// Check the user's answer
 function checkAnswer() {
     const userAnswer = parseInt(document.getElementById('answer').value);
     const correctAnswer = questions[currentLevel][currentQuestionIndex].answer;
@@ -50,8 +47,6 @@ function checkAnswer() {
     if (userAnswer === correctAnswer) {
         feedback.textContent = "Correct! Great job!";
         feedback.style.color = "green";
-
-        // Move to the next question
         nextQuestion();
     } else {
         feedback.textContent = "Incorrect. Try again.";
@@ -59,12 +54,10 @@ function checkAnswer() {
     }
 }
 
-// Move to the next question
 function nextQuestion() {
     const levelQuestions = questions[currentLevel];
     currentQuestionIndex++;
 
-    // If finished all questions in the level, move to the next level
     if (currentQuestionIndex >= levelQuestions.length) {
         if (currentLevel === 'level1') {
             alert("Great! You've completed Level 1. Get ready for harder questions!");
@@ -81,5 +74,4 @@ function nextQuestion() {
     showQuestion();
 }
 
-// Initialize the first question
 showQuestion();
