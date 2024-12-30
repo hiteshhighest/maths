@@ -49,7 +49,7 @@ function checkAnswer() {
     const feedback = document.getElementById('feedback');
 
     if (userAnswer === correctAnswer) {
-        feedback.textContent = "Correct! Great job!";
+        feedback.textContent = "Great Manavi!";
         feedback.style.color = "green";
 
         // Move to the next question
