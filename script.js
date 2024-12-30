@@ -39,7 +39,6 @@ function showQuestion() {
     questionElement.textContent = levelQuestions[currentQuestionIndex].question;
     document.getElementById('answer').value = ''; // Clear the input field
     document.getElementById('feedback').textContent = ''; // Clear feedback
-    document.getElementById('level').textContent = `Level: ${currentLevel.toUpperCase()}`;
 }
 
 // Check the user's answer
@@ -49,7 +48,7 @@ function checkAnswer() {
     const feedback = document.getElementById('feedback');
 
     if (userAnswer === correctAnswer) {
-        feedback.textContent = "Great Manavi!";
+        feedback.textContent = "Correct! Great job!";
         feedback.style.color = "green";
 
         // Move to the next question
@@ -67,12 +66,15 @@ function nextQuestion() {
 
     // If finished all questions in the level, move to the next level
     if (currentQuestionIndex >= levelQuestions.length) {
-        if (currentLevel === 'level1') currentLevel = 'level2';
-        else if (currentLevel === 'level2') currentLevel = 'level3';
-        else {
-            // Game over, restart from Level 1
+        if (currentLevel === 'level1') {
+            alert("Great! You've completed Level 1. Get ready for harder questions!");
+            currentLevel = 'level2';
+        } else if (currentLevel === 'level2') {
+            alert("Amazing! You've completed Level 2. Here comes the toughest set!");
+            currentLevel = 'level3';
+        } else {
+            alert("You're a math master! You've completed all levels. Restarting at Level 1.");
             currentLevel = 'level1';
-            alert("You've mastered all levels! Restarting at Level 1.");
         }
         currentQuestionIndex = 0;
     }
